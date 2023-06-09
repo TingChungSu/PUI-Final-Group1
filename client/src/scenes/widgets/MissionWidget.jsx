@@ -1,7 +1,7 @@
 import { Box, Typography, useTheme, Button } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
 import WidgetWrapper from "components/WidgetWrapper";
-
+import Coin from "../../coin.svg"
 const MissionWidget = () => {
   const { palette } = useTheme();
   const dark = palette.neutral.dark;
@@ -9,9 +9,9 @@ const MissionWidget = () => {
   const medium = palette.neutral.medium;
 
   const listItems = [
-    { id: 1, content: 'Follow 10 people', reward:'100 coins' , progress: '2/10' },
-    { id: 2, content: 'Make 10 posts', reward:'100 coins', progress: '2/10'  },
-    { id: 3, content: 'Buy 10 post', reward:'100 coins', progress: '0/10'  }
+    { id: 1, content: 'Follow 10 people', reward:'100' , progress: '2/10' },
+    { id: 2, content: 'Make 10 posts', reward:'100', progress: '2/10'  },
+    { id: 3, content: 'Buy 10 post', reward:'100', progress: '0/10'  }
   ];
   return (
     <WidgetWrapper>
@@ -23,19 +23,20 @@ const MissionWidget = () => {
       {listItems.map((item) => (
         <Typography sx={{ margin: '16px 0' }}>
           <FlexBetween>
-            <Typography color={main} variant="h5" fontWeight="500"
+            <Typography color={main} variant="h7" fontWeight="500"
               sx={{
                 width: "100%",
               }}>
               {item.content}
             </Typography>
-            <Typography color={main} variant="h5" fontWeight="500"
+            <Typography color={main} variant="h6" fontWeight="500"
               sx={{
                 width: "50%",
               }}>
               {item.progress}
             </Typography>
-            <Typography color={main} variant="h6" fontWeight="500"
+            <img src={Coin}/>
+            <Typography color={main} variant="h7" fontWeight="500"
               sx={{
                 width: "50%",
               }}>
@@ -47,6 +48,7 @@ const MissionWidget = () => {
                 backgroundColor: palette.primary.main,
                 borderRadius: "2rem",
               }}
+              disabled
             >
               get
             </Button>

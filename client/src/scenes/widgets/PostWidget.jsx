@@ -6,13 +6,16 @@ import {
 } from "@mui/icons-material";
 import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
-import { Box, Divider, IconButton, Typography, useTheme } from "@mui/material";
+import { Box, Divider, IconButton, Typography, useTheme, Button } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
 import Friend from "components/Friend";
 import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPost } from "state";
+import Popup from 'reactjs-popup';
+import History from "../../Frame_46.svg"
+import Coin from "../../coin.svg"
 
 const PostWidget = ({
   postId,
@@ -91,17 +94,37 @@ const PostWidget = ({
           </FlexBetween>
 
           <FlexBetween gap="0.3rem">
-            <IconButton >
+            {/* <IconButton >
               <ShoppingCartIcon />
-            </IconButton>
+            </IconButton> */}
+            <img src={Coin}/>
             <Typography>$ {price}</Typography>
+          </FlexBetween>
+
+          <FlexBetween gap="0.3rem">
+          <Popup trigger={<Button   sx={{
+                color: "#8e8e8e",
+                backgroundColor: "transparent",
+                borderRadius: "2rem",
+                fontSize: "12px",
+                textDecoration: "underline"
+              }}
+             > View Trading History</Button>} modal>
+             <img src={History}/>
+          </Popup>
           </FlexBetween>
           
         </FlexBetween>
 
-        <IconButton>
-          <ShareOutlined />
-        </IconButton>
+        <Button
+              sx={{
+                color: palette.background.alt,
+                backgroundColor: palette.primary.main,
+                borderRadius: "2rem",
+              }}
+            >
+              Purchase
+            </Button>
       </FlexBetween>
       {isComments && (
         <Box mt="0.5rem">

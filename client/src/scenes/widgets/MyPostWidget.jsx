@@ -24,6 +24,7 @@ import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setPosts } from "state";
+import Coin from "../../coin.svg"
 
 const MyPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch();
@@ -137,6 +138,7 @@ const MyPostWidget = ({ picturePath }) => {
         {isNonMobileScreens ? (
           <>
             <FlexBetween gap="0.25rem">
+            <img src={Coin}/>
               <Typography color={mediumMain}>Price
                 <InputBase
                   type="number"

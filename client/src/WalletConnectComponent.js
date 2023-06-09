@@ -59,6 +59,7 @@ const WalletConnectComponent = () => {
               color: palette.background.alt,
               backgroundColor: palette.primary.main,
               borderRadius: "3rem",
+              marginBottom: "10px",
             }}
           >
             Disconnect Wallet
@@ -72,6 +73,7 @@ const WalletConnectComponent = () => {
               color: palette.background.alt,
               backgroundColor: palette.primary.main,
               borderRadius: "3rem",
+              marginBottom: "10px",
             }}
           >
             Connect Wallet
@@ -83,6 +85,7 @@ const WalletConnectComponent = () => {
                 color: palette.background.alt,
                 backgroundColor: palette.primary.main,
                 borderRadius: "3rem",
+                marginBottom: "10px",
               }}
             >
               Install MetaMask
